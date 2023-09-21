@@ -229,7 +229,7 @@ check out `?read_csc()` for more information.
 Read in an excel file.
 
 ``` r
-mld_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
+mlb_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
 ```
 
 Read in a SAS file.
@@ -255,3 +255,11 @@ litters_readr = read_csv("./data/FAS_litters.csv")
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## Exporting data
+
+Export the mlb sub-table
+
+``` r
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
