@@ -20,7 +20,21 @@ print(litters_df)
 
 ## Take a look at the data
 
-```{r}
+Printing in the console.
 
+```{r}
+litters_df
+```
+
+```{r}
+head(litters_df)
+```
+
+```{r}
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
 ```
 
