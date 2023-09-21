@@ -16,6 +16,11 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
+``` r
+library(readxl)
+library(haven)
+```
+
 ## Read in some data
 
 Read in the litters dataset.
@@ -217,4 +222,18 @@ spec(litters_df)
     ##   `Pups survive` = col_double()
     ## )
 
-check out `?read_cvs()` for more information.
+check out `?read_csc()` for more information.
+
+## Other file formats
+
+Read in an excel file.
+
+``` r
+mld_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
+```
+
+Read in a SAS file.
+
+``` r
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+```
