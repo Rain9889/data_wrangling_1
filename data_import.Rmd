@@ -13,9 +13,14 @@ Read in the litters dataset.
 
 ```{r}
 litters_df = read_csv("./data/FAS_litters.csv")
+spec(litters_df)
 litters_df = janitor::clean_names(litters_df)
+print(litters_df)
 ```
 
 ## Take a look at the data
 
+```{r}
+
+```
 
