@@ -16,7 +16,7 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
-## \`pivot_loger
+## `pivot_loger`
 
 Load the PULSE data
 
@@ -54,3 +54,28 @@ pivot_longer(
 relocate(id,visit) %>% 
 mutate(visit = recode(visit, "bl"="00m"))
 ```
+
+## `pivot_wider`
+
+Make up some data!
+
+``` r
+analysis_result = 
+  tibble(
+    group = c("treatment", "treatment", "placebo", "placebo"),
+    time = c("pre", "post", "pre", "post"),
+    mean = c(4, 8, 3.5, 4)
+  )
+
+analysis_result %>% 
+  pivot_wider(
+    names_from = "time",
+    values_from = "mean"
+  )
+```
+
+    ## # A tibble: 2 × 3
+    ##   group       pre  post
+    ##   <chr>     <dbl> <dbl>
+    ## 1 treatment   4       8
+    ## 2 placebo     3.5     4
